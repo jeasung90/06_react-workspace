@@ -2,6 +2,45 @@
   text-align: center;
 }
 
+.black-nav{
+  display: flex;
+  background-color: black;
+  width: 100%;
+  color: white;
+  padding-left: 20px;
+
+}
+span:hover{
+  cursor: pointer;
+  font-size: 17px;
+}
+h4{
+  display: inline-block;
+}
+span{
+  white-space: pre;
+  display: inline-block;
+}
+h4:hover{
+  /* font-weight: 900; */
+  /* font-size: 17px; */
+  cursor: pointer;
+}
+div{
+  box-sizing: border-box;
+}
+
+.list{
+  padding-left: 20px;
+  text-align:left;
+  border-bottom: 1px solid gray;
+}
+.modal{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #eee;
+  text-align: left;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
