@@ -3,6 +3,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import $ from 'jquery';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     return '12'
   })
   let [index, setIndex] = useState(0);
+  let [입력값, 입력값변경] = useState('');
 
   let num = [1,2];
   let j = num[0];
@@ -72,13 +74,24 @@ function App() {
 
           return (
             <div className='list'>
-              <h4 onClick={()=>{setModal(!modal),setIndex(i)}}>{a}</h4><span onClick={ () => clike(i)} >  👍</span> {like[i]} <span onClick={ () => cbed(i)} >  👎</span> {bed[i]} 
+              <h4 onClick={()=>{setModal(!modal),setIndex(i)}}>{a}</h4><span onClick={ () => clike(i)} >  👍</span> {like[i]} <span onClick={ () => cbed(i)} >  👎</span> {bed[i]} <button> 삭제</button>
               <p>9월 11일 발행</p>
             </div>
+            
 
           )
         })
       }
+      <input onChange={(e)=>{
+        입력값변경(e.target.value);
+        console.log(입력값);
+      }}></input>
+      <button onClick={(e)=>{
+        let cope = [...a];
+        cope.unshift(입력값);
+        b(cope);
+      }}>입력</button>
+   
       {
         // 조건식 ? 참일떄 실행할 코드 : 거짓일 떄 실행할 코드
         // 1 == 1 ? '맞다' : '아니다'
@@ -92,6 +105,7 @@ function App() {
     
   );
   function clike(i){
+    
     let cope = [...like];
     cope[i] = like[i]+1;
     li(cope);
@@ -101,7 +115,7 @@ function App() {
     cope[i] = bed[i]+1;
     be(cope);
   } 
-
+  
 }
 
 
