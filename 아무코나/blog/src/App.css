@@ -21,6 +21,11 @@ span{
   white-space: pre;
   display: inline-block;
 }
+button{
+  white-space: pre;
+  display: inline-block;
+  margin-left: 10px;
+}
 h4:hover{
   /* font-weight: 900; */
   /* font-size: 17px; */

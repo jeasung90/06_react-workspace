@@ -74,7 +74,8 @@ function App() {
 
           return (
             <div className='list'>
-              <h4 onClick={()=>{setModal(!modal),setIndex(i)}}>{a}</h4><span onClick={ () => clike(i)} >  👍</span> {like[i]} <span onClick={ () => cbed(i)} >  👎</span> {bed[i]} <button> 삭제</button>
+              <h4 onClick={()=>{setModal(!modal),setIndex(i)}}>{a}</h4><span onClick={ () => clike(i)} >  👍</span> {like[i]} <span onClick={ () => cbed(i)} >  👎</span> {bed[i]} 
+              <button onClick={()=>{deleteA(i)}}> 삭제</button>
               <p>9월 11일 발행</p>
             </div>
             
@@ -106,15 +107,22 @@ function App() {
   );
   function clike(i){
     
-    let cope = [...like];
-    cope[i] = like[i]+1;
-    li(cope);
+    let copy = [...like];
+    copy[i] = like[i]+1;
+    li(copy);
   } 
   function cbed(i){
-    let cope = [...bed];
-    cope[i] = bed[i]+1;
-    be(cope);
+    let copy = [...bed];
+    copy[i] = bed[i]+1;
+    be(copy);
   } 
+  function deleteA(i){
+    console.log(i)
+    let copy = [...a];
+    console.log(copy)
+    copy.splice(i,1);
+    b(copy);
+  }
   
 }
 
