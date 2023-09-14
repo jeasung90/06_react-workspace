@@ -1,7 +1,7 @@
 import { useState,useRef } from "react";
 
 
-const DiaryEditor = ({onCreate}) => {
+const DiaryEditor = ({onCreate,navi}) => {
 
     const authorInput = useRef();
     const contentInput = useRef();
@@ -43,7 +43,8 @@ const DiaryEditor = ({onCreate}) => {
             content:'',
             emotion:1
         })
-        alert("저장ㄱㄱ")
+        alert("저장ㄱㄱ");
+        navi("/list");
     }
 
 
